@@ -57,7 +57,7 @@ function A() {
   );
 }
 
-function B() {
+const B = React.memo(() => {
   const { b } = useData();
   const updateCount = React.useRef(0);
   useEffect(() => {
@@ -69,9 +69,9 @@ function B() {
       <p>Update Count : {updateCount.current}</p>
     </div>
   );
-}
+});
 
-function C() {
+const C = React.memo(() => {
   const { c } = useData();
   const updateCount = React.useRef(0);
   useEffect(() => {
@@ -83,4 +83,4 @@ function C() {
       <p>Update Count : {updateCount.current}</p>
     </div>
   );
-}
+});
